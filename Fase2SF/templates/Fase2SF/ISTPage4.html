@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block content %}
+
+<h1>Il Fondo IST MELE </h1>
+<p />
+
+<link rel="stylesheet" href="{% static "global/farmerchoice.css" %}">
+<div class="w3-container border-top border-bottom">        <p></p>
+    <p>Supponiamo che:</p>
+        <table class="table" style="width:60%">
+        <tr style="background-color:#fdc5a1">
+            <th scope="col"  colspan="1" style="text-align:left"> CONTRIBUTO ASSOCIATIVO MELICOLTORE</th>
+            <th scope="col"  colspan="1" style="text-align:center"> {{istct}} €/ETTARO</th>
+        </tr>
+         <tr style="background-color:#ffe0cc">
+            <th scope="col"  colspan="1" style="text-align:left"> CONTRIBUTO PUBBLICO</th>
+            <th scope="col"  colspan="1" style="text-align:center"> {{eutot}} €/ETTARO</th>
+        </tr>
+         <tr style="background-color:#fdc5a1">
+            <th scope="col"  colspan="1" style="text-align:left ma"> RIDUZIONE SU CAPITOLI</th>
+            <th scope="col"  colspan="1" style="text-align:center">  {{disctot}} €/ETTARO</th>
+        </tr>
+        <tr style="background-color:#ffe0cc">
+            <th scope="col"  colspan="1" style="text-align:left"> COSTO EFFETTIVO PER IL MELICOLTORE</th>
+            <th scope="col"  colspan="1" style="text-align:center"> {{farmercost}} €/ETTARO</th>
+        </tr>
+    </table>
+
+</div>
+<p></p>
+{% endblock %}

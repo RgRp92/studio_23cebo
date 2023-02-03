@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block styles %}
+   <style>
+      input[type=radio] {
+        transform: scale(1.5);
+        margin: 12px -10px 0px -30px;
+      }
+   </style>
+{% endblock %}
+
+{% block title %}
+<h3>UN ESEMPIO DI SITUAZIONE SCELTA</h3>
+{% endblock %}
+
+{% block content %}
+
+<div class="w3-container border-top border-bottom" style="font-size: 18px">    <p></p>    <p></p>
+  <p></p>
+<p></p>
+
+    	<link rel="stylesheet" href="{% static "global/empty1.css" %}">
+    	<img src="{%static 'Fase2/mpla.jpg' %}"  align="middle" width="100%"/>
+
+<p></p>
+    <p>• Nelle caselle rosse e verdi è riportata la differenza tra l'Opzione A e l'Opzione B.</p>
+    <p></p>
+<p>• Ad esempio, se Lei sceglie l'Opzione A (IST) e si realizza l'intervallo <b> -30% • -20% nel 2022</b>, il suo reddito
+	è superiore di <b>{{diff_a}} €</b> rispetto al reddito dell'Opzione B (no IST).</p>
+<p></p>
+        <p>• In altre parole: <b>18.622 € - 15.311 € = 3.311 €</b></p>
+</div>
+
+
+
+
+
+
+{% endblock %} -->

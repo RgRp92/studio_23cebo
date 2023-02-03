@@ -1,0 +1,82 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+<p></p>
+<p></p>
+{% endblock %}
+{% block content %}
+        	<link rel="stylesheet" href="{% static "global/empty3.css" %}">
+
+        <table class="table" style="width:100%" >
+        <tr style="background-color: white; text-align:center" >
+			<td colspan="1" width="35%"> <b> RISCHIO</b> </td>
+			<td colspan="1" width="14%"> Totalmente in disaccordo </td>
+			<td colspan="1" width="14%"> In disaccordo </td>
+			<td colspan="1" width="14%"> Né d'accordo né in disaccordo </td>
+			<td colspan="1" width="14%"> D'accordo </td>
+			<td colspan="1" width="14%"> Completamente d'accordo </td>
+		</tr>
+</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Sono sempre uno dei primi produttori nella mia zona ad adottare nuove tecnologie</td>
+			{% for choice in form.q_risk1 %}
+          	<td style="padding-left:3%">{{ choice }}</td>
+          {% endfor %}
+		</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Le colture che produco sono di uno o massimo due tipologie</td>
+			{% for choice in form.q_risk2 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Non faccio troppo affidamento sulle informazioni di mercato di: associazione di agricoltori, report MIPAAF, notiziari</td>
+			{% for choice in form.q_risk3 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Il reddito non-agricolo non è importante per la stabilità economica della mia famiglia </td>
+			{% for choice in form.q_risk4 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+			<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Gli investimenti extra-agricoli non sono importanti fonti di reddito per me e la mia famiglia </td>
+			{% for choice in form.q_risk5 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+			<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">La maggior parte dei miei macchiari non è nuova o in buone condizioni </td>
+			{% for choice in form.q_risk6 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+			<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Rinvio sempre le necessarie acquisizioni di macchinari agricoli e altri articoli agricoli</td>
+			{% for choice in form.q_risk7 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+</table>
+<p></p>
+<div></div>
+<p></p>
+
+
+<div class="container">
+        	<div class="row">
+        		&nbsp;
+        	</div>
+        	<div class="row" style="padding-left:100%;">
+        		<div class="col-md-10">
+
+        		</div>
+        		<div class="col-md-2">
+              <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        		</div>
+
+        	</div>
+        </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+<h4> Prego assegni i gettoni. Dopo aver assegnato tutti i gettoni potrete cliccare sul tasto INVIA (in basso) per proseguire.</h4>
+{% endblock %}
+
+{% block content %}
+<div class="w3-container border-top ">
+
+</div>
+<p></p>
+<link rel="stylesheet" href="{% static "global/farmerchoice.css" %}">
+<script type="text/javascript" src="{% static "global/farmerchoice.js" %}"></script>
+
+
+<div id = "full_div" >
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+// Some initial globals
+
+let belief_dat = {{beliefs|json}};
+beliefs_ns.mkview(belief_dat, "full_div", results = 0, show_submit = 1);
+
+</script>
+
+{% endblock %}

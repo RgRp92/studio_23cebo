@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block styles %}
+    <link href="{% static 'bret/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+{% block title %}
+<h3>BENVENUTO</h3>
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "global/farmerchoice.css" %}">
+<div class="instructions" style="font-size: 22px">
+    <p></p>
+    <ul>
+    <li>       La ringraziamo per aver accettato di partecipare allo studio di oggi. </li>
+    <p />
+    <li> Lo studio vuole indagare le scelte e le opinioni personali dei melicoltori Trentini riguardo al Fondo IST Mele e i redditi da mele.</li>
+    <p />
+    <li> Lo studio è composto di 2 Fasi durante le quali Lei dovrà compiere delle scelte che le daranno la possibilità di guadagnare delle somme di denaro. La preghiamo dunque di fare attenzione alle istruzioni.
+</li>
+    <p />
+    <li>Alla fine dello studio è previsto un breve questionario.</li>
+    <p></p>
+    <li> Siamo interessati alle sue opinioni e preferenze personali. Non ci sono risposte giuste o sbagliate.
+    <p />
+    <li>Le ricordiamo che tutte le informazioni che condividerà nello studio saranno completamente anonime.</li>
+    <p />
+</ul>
+</div>
+<p />
+
+{% endblock %}

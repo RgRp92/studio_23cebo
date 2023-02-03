@@ -1,0 +1,79 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+<p></p>
+<p></p>
+{% endblock %}
+{% block content %}
+        	<link rel="stylesheet" href="{% static "global/empty3.css" %}">
+
+        <table class="table" style="width:100%" >
+        <tr style="background-color: white; text-align:center" >
+			<td colspan="1" width="35%"> <b></b> </td>
+			<td colspan="1" width="14%"> Totalmente in disaccordo </td>
+			<td colspan="1" width="14%"> In disaccordo </td>
+			<td colspan="1" width="14%"> Né d'accordo né in disaccordo </td>
+			<td colspan="1" width="14%"> D'accordo </td>
+			<td colspan="1" width="14%"> Completamente d'accordo </td>
+		</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Quando prendo una decisione, penso molto di più a ciò che potrei perdere che a
+ciò che potrei guadagnare</td>
+			{% for choice in form.q_loss1 %}
+          	<td style="padding-left:3%">{{ choice }}</td>
+          {% endfor %}
+		</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Perdere una somma di denaro è più rilevante che guadagnare una somma di
+denaro</td>
+			{% for choice in form.q_loss2 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Sono nervoso quando devo prendere una decisione che può portarmi a perdere
+una somma di denaro</td>
+			{% for choice in form.q_loss3 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Evitare una perdita è più importante per me che ottenere un guadagno</td>
+			{% for choice in form.q_loss4 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+					<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Un potenziale perdita di denaro mi spaventa di più di quanto mi incoraggi un
+potenziale guadagno di denaro</td>
+			{% for choice in form.q_loss5 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+					<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Sono attento alle perdite dovute ai cambiamenti nei prezzi di mercato</td>
+			{% for choice in form.q_loss6 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+</table>
+<p></p>
+<div></div>
+<p></p>
+
+
+<div class="container">
+        	<div class="row">
+        		&nbsp;
+        	</div>
+        	<div class="row" style="padding-left:100%;">
+        		<div class="col-md-10">
+
+        		</div>
+        		<div class="col-md-2">
+              <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        		</div>
+
+        	</div>
+        </div>
+{% endblock %}
+
+

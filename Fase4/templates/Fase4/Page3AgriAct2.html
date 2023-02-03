@@ -1,0 +1,127 @@
+{% extends "global/Page.html" %}
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+{% load otree static %}
+
+{% block title %}
+Fase 4 Questionario
+<p></p>
+<p></p>
+<p> GESTIONE DEL RISCHIO <p></p>
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "global/empty3.css" %}">
+
+<p>13. Quali Fondi Mutualisitici conosce tra i seguenti? (Possibile barrare più caselle) </p>
+        <table class="table" style="width:100%;"
+		>
+            <tr>
+            <td scope="row"  colspan="1" >A. &nbsp; FONDO SOTTO SOGLIA </td>
+			<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q13_a"> </td>
+			</tr>
+            <tr>
+			<td scope="row"  colspan="1" >B. &nbsp; FONDO COMUNI ALTO RISCHIO</td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q13_b"> </td>
+					</tr>
+			<tr>
+			<td scope="row"  colspan="1" >C. &nbsp; FONDO FITOTPATIE IMPIANTI PRODUTTIVI</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q13_c"> </td>
+				</tr>
+			<tr>
+			<td scope="row"  colspan="1" >D. &nbsp; FONDO FITOPATIE PRODOTTO </td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q13_d"> </td>
+				<tr>
+			</tr>
+			<td scope="row"  colspan="1" >E. &nbsp; FONDO IST MELE</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q13_e"> </td>
+        </tr>
+    </table>
+&nbsp;
+
+<p>14. Quali Fondi Mutualisitici conosce tra i seguenti? (Possibile barrare più caselle) </p>
+        <table class="table" style="width:100%;"
+		>
+            <tr>
+            <td scope="row"  colspan="1" >A. &nbsp; FONDO SOTTO SOGLIA </td>
+			<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q14_a"> </td>
+			</tr>
+            <tr>
+			<td scope="row"  colspan="1" >B. &nbsp; FONDO COMUNI ALTO RISCHIO</td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q14_b"> </td>
+					</tr>
+			<tr>
+			<td scope="row"  colspan="1" >C. &nbsp; FONDO FITOTPATIE IMPIANTI PRODUTTIVI</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q14_c"> </td>
+				</tr>
+			<tr>
+			<td scope="row"  colspan="1" >D. &nbsp; FONDO FITOPATIE PRODOTTO </td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q14_d"> </td>
+				<tr>
+			</tr>
+			<td scope="row"  colspan="1" >E. &nbsp; FONDO IST MELE</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q14_e"> </td>
+        </tr>
+    </table>
+&nbsp;
+
+<p>15. Quali Fondi Mutualisitici conosce tra i seguenti? (Possibile barrare più caselle) </p>
+        <table class="table" style="width:100%;">
+            <tr>
+            <td scope="row"  colspan="1" >A. &nbsp; FONDO SOTTO SOGLIA </td>
+			<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q15_a"> </td>
+			</tr>
+            <tr>
+			<td scope="row"  colspan="1" >B. &nbsp; FONDO COMUNI ALTO RISCHIO</td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q15_b"> </td>
+					</tr>
+			<tr>
+			<td scope="row"  colspan="1" >C. &nbsp; FONDO FITOTPATIE IMPIANTI PRODUTTIVI</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q15_c"> </td>
+				</tr>
+			<tr>
+			<td scope="row"  colspan="1" >D. &nbsp; FONDO FITOPATIE PRODOTTO </td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q15_d"> </td>
+				<tr>
+			</tr>
+			<td scope="row"  colspan="1" >E. &nbsp; FONDO IST MELE</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q15_e"> </td>
+        </tr>
+    </table>
+
+<div class="container">
+        	<div class="row">
+        		&nbsp;
+        	</div>
+        	<div class="row" style="padding-left:95%;">
+        		<div class="col-md-10">
+
+        		</div>
+        		<div class="col-md-2">
+              <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        		</div>
+
+        	</div>
+        </div>
+
+{% endblock %}

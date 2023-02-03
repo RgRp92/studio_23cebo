@@ -1,0 +1,32 @@
+
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% block title %}
+<h3>LE PROPORZIONI DELL'URNA</h3>
+{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static "global/farmerchoice.css" %}">
+<div class="w3-container border-top border-bottom" style="font-size: 22px">    <p></p>
+    <table class="table" style="width:100%">
+
+        <tr style="background-color:#ffe0cc" >
+            <th scope="col"  colspan="6" style="text-align:center">  VARIAZIONE DI REDDITO</th>
+        </tr>
+  <tr style="font-size:90%">
+    <td colspan="1" scope="col" style="text-align:center;">-{{var1}}% • -{{var11}}%</td>
+    <td scope="col" colspan="1" style="text-align:center;"> -{{var2}}% • -{{var22}}%</td>
+    <td scope="col" colspan="1" style="text-align:center;">-{{var3}}% • {{var33}}%</td>
+    <td scope="col" colspan="1" style="text-align:center"> +{{var4}}% • +{{var44}}%</td>
+    <td scope="col" colspan="1" style="text-align:center"> +{{var5}}% • +{{var55}}%</td>
+
+  <tr style="font-size:95%">
+    <th colspan="1" scope="col" style="text-align:center;">{{prb1}} su 100</th>
+    <th colspan="1" scope="col" style="text-align:center;">{{prb2}} su 100</th>
+    <th colspan="1" scope="col" style="text-align:center;">{{prb3}} su 100</th>
+    <th colspan="1" scope="col" style="text-align:center;">{{prb4}} su 100</th>
+    <th colspan="1" scope="col" style="text-align:center;">{{prb5}} su 100</th>
+        </tr>
+    </table>
+</div>
+    	<img src="{%static 'Fase2/tickets.jpg' %}"  align="middle" width="100%"/>
+{% endblock %}

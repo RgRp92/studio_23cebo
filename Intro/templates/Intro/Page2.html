@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block styles %}
+    <link href="{% static 'bret/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+{% block title %}
+<h3>FASI DELLO STUDIO</h3>
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "global/farmerchoice.css" %}">
+<div class="instructions" style="font-size: 22px">
+<p></p>
+    <p>Lo studio di oggi è composto da:</p>
+<ul>
+    <li> <b>Fase 1</b>: Le sue opinioni riguardo ai futuri redditi per ettaro da mele</li>
+    <p />
+    <li> <b>Fase 2</b>: Le sue scelte riguardo a situazioni di rischio</li>
+    <p />
+    <li> <b>Questionario - Parte 1</b> riguardo le sue preferenze personali per la gestione del rischio.</li>
+    <p />
+    <li> <b>Questionario - Parte 2</b> riguardo le sue caratteristiche personali e la sua attività di produzione di mele.</li>
+</ul>
+</div>
+    <p />
+
+{% endblock %}

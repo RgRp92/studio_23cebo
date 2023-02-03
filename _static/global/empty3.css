@@ -1,0 +1,11 @@
+.otree-body {
+	max-width:80%;
+}
+
+img {
+  width:95%;
+  height: auto;
+}
+table tr:hover {
+    background-color: #f5f5f5;
+  }

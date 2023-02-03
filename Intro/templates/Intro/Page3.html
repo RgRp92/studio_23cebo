@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% block styles %}
+    <link href="{% static 'bret/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+{% block title %}
+<h3>METODO DI PAGAMENTO</h3>
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "global/farmerchoice.css" %}">
+<div class="instructions" style="font-size: 22px">
+<p></p>
+<ul>
+    <li> Per la partecipazione allo studio riceverà un compenso di <b> 15 €</b>.</li>
+    <p />
+    <li> Nella Fase 1 e nella Fase 2 dello studio ha la possibilità di guadagnare un compenso aggiuntivo di <b> 10 €</b>.</li>
+    <p />
+    <li> <b> Solo una delle 2 Fasi verrà estratta in modo casuale e usata per determinare i vostri guadagni.
+        Questa estrazione avverrà alla fine dello studio</b>.</li>
+    <p/>
+    <li> Solo {{n_winners}} {% if n_winners == 1 %} dei partecipanti allo studio di oggi verrà estratto {% else %} partecipanti allo studio di oggi verrano estratti {% endif %}   per il ricevere il compenso aggiuntivo.</li>
+    <p />
+    <li> L'ammontare massimo che oggi può ottenere è quindi di <b> 25 €</b> .</li>
+</ul>
+</div>
+<p />
+
+{% endblock %}

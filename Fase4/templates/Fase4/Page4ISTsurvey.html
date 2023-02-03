@@ -1,0 +1,224 @@
+{% extends "global/Page.html" %}
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+{% load otree static %}
+
+{% block title %}
+Fase 4 Questionario
+<link rel="stylesheet" href="{% static "global/empty3.css" %}">
+
+<p></p>
+<p></p>
+<p> FONDO IST MELE <p></p>
+{% endblock %}
+
+{% block content %}
+
+<p>18. I fondi IST proteggono l'azienda dai seguenti rischi (Possibile barrare più caselle) </p>
+        <table class="table" style="width:100%;">
+            <tr>
+            <td scope="row"  colspan="1" >A. &nbsp; RISCHI DI PRODUZIONE: GRANDINE; GELATE TARDIVE, FITOPATIE </td>
+			<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q18_a"> </td>
+			</tr>
+            <tr>
+			<td scope="row"  colspan="1" >B. &nbsp; RISCHI DI MERCATO: VARIAZIONI DI PREZZO DI VENDITA DELLE MELE;
+            AUMENTO PREZZI DEI FATTORI DI PRODUZIONE (COSTO FITOSANITARI, PREZZO CONCIMI, COSTO CARBURANTI)</td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q18_b"> </td>
+					</tr>
+			<tr>
+			<td scope="row"  colspan="1" >C. &nbsp; RISCHI FINANZIARI: ACCESSO AI MUTUI, MANCANZA DI RISERVE FINANZIARIE,
+            DEBITI INSOLUTI</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q18_c"> </td>
+				</tr>
+			<tr>
+			<td scope="row"  colspan="1" >D. &nbsp; RISCHI ISTITUZIONALI: CAMBIO REGOLAMENTI IMPREVISTI (ES. REGOLAMENTAZIONE
+            DEI FITOSANITARI EUROPEA)</td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q18_d"> </td>
+				<tr>
+			</tr>
+			<td scope="row"  colspan="1" >E. &nbsp; RISCHI PERSONALI: MALATTIA PERSONALE, INFORTUNI SUL LAVORO,
+            PROBLEMI FAMILIARI</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q18_e"> </td>
+        </tr>
+			<td scope="row"  colspan="1" >F. &nbsp; TUTTI I PRECEDENTI</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q18_f"> </td>
+        </tr>
+    </table>
+
+
+&nbsp;
+
+<p>19. Nel 2022 ha sottoscritto la partecipazione al Fondo IST Mele? </p>
+<table class="table" style="width:100%;">
+            <tr>
+            <td scope="row"  colspan="1" >A. &nbsp; SI </td>
+			<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" name="check1" id="check1" value="True"  onclick="showTable()"> </td>
+			</tr>
+            <tr>
+			<td scope="row"  colspan="1" >B. &nbsp; NO</td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" name="check2" value="True" id="check2" onclick="showTable()"> </td>
+					</tr>
+        </table>
+
+
+<div id="table1" style="display:none;">
+ <p>20. Se SI, indichi una o più delle seguenti motivazioni(Possibile barrare più caselle) </p>
+        <table class="table" style="width:100%;">
+            <tr>
+            <td scope="row"  colspan="1" >A. &nbsp; COSTI DI ADESIONE ALLA COPERTURA MUTUALISTICA BASSI </td>
+			<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q20_a"> </td>
+			</tr>
+            <tr>
+			<td scope="row"  colspan="1" >B. &nbsp; GLI INDENNIZZI CHE POTREI RICEVERE SONO ALTI</td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q20_b"> </td>
+					</tr>
+			<tr>
+			<td scope="row"  colspan="1" >C. &nbsp; LO FACCIO OGNI ANNO</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q20_c"> </td>
+				</tr>
+			<td scope="row"  colspan="1" >D. &nbsp; COMPRENDO IL FUNZIONAMENTO DELLO STRUMENTO</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q20_d"> </td>
+        </tr>
+		<tr>
+        	<td scope="row"  colspan="1" >E. &nbsp; MI GARANTISCE UNA MAGGIORE COPERTURA
+			A RISCHI GIÀ COPERTI DA ALTRI STURMENTI DI DIFESA PASSIVA (ASSICURAZIONE) </td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q20_e"> </td>
+        </tr>
+            <tr>
+        	<td scope="row"  colspan="1" >F. &nbsp; MI GARANTISCE UNA MAGGIORE COPERTURA
+			A RISCHI CHE NON SONO COPERTI DA ALTRI STURMENTI DI DIFESA PASSIVA (ASSICURAZIONE) </td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q20_f"> </td>
+        </tr>
+			<tr>
+			<td scope="row"  colspan="1" >G. &nbsp; MI GARANTISCE UNA MAGGIORE COPERTURA
+			A RISCHI GIÀ COPERTI DA ALTRI STURMENTI DI DIFESA ATTIVA (RETI, ANTI-BRINA, IRRIGAZIONE)</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q20_g"> </td>
+        </tr>
+            	<tr>
+			<td scope="row"  colspan="1" >H. &nbsp; MI È STATO CONSIGLIATO DA CO.DI.PR.A/ASSICURATORE/INTERMEDIARIO/COMPAGNIA ASSICURATIVA/ COOPERATIVA DI APPARTENENZA</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q20_h"> </td>
+        </tr>
+                	<tr>
+			<td scope="row"  colspan="1" >I. &nbsp; IL MIO REDDITO DA MELE VARIA DI ANNO IN ANNO</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q20_i"> </td>
+        </tr>
+                	<tr>
+			<td scope="row"  colspan="1" >J. &nbsp; È LA MIA PRINCIPALE FONTE DI REDDITO</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q20_j"> </td>
+        </tr>
+    </table>
+</div>
+
+<div id="table2" style="display:none;">
+	<p>21. Se NO, indichi una o più delle seguenti motivazioni (possibile barrare più caselle) </p>
+        <table class="table" style="width:100%;">
+            <tr>
+            <td scope="row"  colspan="1" >A. &nbsp; COSTI DI ADESIONE ALLA COPERTURA MUTUALISTICA ALTI </td>
+			<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q21_a"> </td>
+			</tr>
+            <tr>
+			<td scope="row"  colspan="1" >B. &nbsp; GLI INDENNIZZI CHE POTREI RICEVERE SONO BASSI</td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q21_b"> </td>
+					</tr>
+			<tr>
+			<td scope="row"  colspan="1" >C. &nbsp; NON COMPRENDO IL FUNZIONAMENTO DELLO STRUMENTO</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q21_c"> </td>
+				</tr>
+			<td scope="row"  colspan="1" >D. &nbsp; NON MI GARANTISCE UNA MAGGIORE COPERTURA
+			A RISCHI GIÀ COPERTI DA ALTRI STURMENTI DI DIFESA PASSIVA (ASSICURAZIONE)</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q21_d"> </td>
+        </tr>
+		<tr>
+        	<td scope="row"  colspan="1" >E. &nbsp; NON MI GARANTISCE UNA MAGGIORE COPERTURA
+			A RISCHI GIÀ COPERTI DA ALTRI STURMENTI DI DIFESA ATTIVA (RETI, ANTI-BRINA, IRRIGAZIONE) </td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q21_e"> </td>
+        </tr>
+            <tr>
+        	<td scope="row"  colspan="1" >F. &nbsp; NON MI È STATO CONSIGLIATO DA CO.DI.PR.A/ASSICURATORE/INTERMEDIARIO/COMPAGNIA ASSICURATIVA/
+				COOPERATIVA DI APPARTENENZA </td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q21_f"> </td>
+        </tr>
+			<tr>
+			<td scope="row"  colspan="1" >G. &nbsp; IL MIO REDDITO  DA MELE NON VARIA DI ANNO IN ANNO</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q21_g"> </td>
+        </tr>
+            	<tr>
+			<td scope="row"  colspan="1" >H. &nbsp; SCARSA TRASPARENZA NEL FUNZIONAMENTO DEL FONDO IST</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q21_h"> </td>
+        </tr>
+                	<tr>
+			<td scope="row"  colspan="1" >I. &nbsp; SCARSA TRASPARENZA NELLA DEFINIZIONE DEL TRIGGER EVENT</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q21_i"> </td>
+        </tr>
+                	<tr>
+			<td scope="row"  colspan="1" >J. &nbsp; PRODUCO POCHE MELE/ NON SONO LA MIA FONTE DI REDDITO PRINCIPALE</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q21_j"> </td>
+        </tr>
+    </table>
+</div>
+
+<script>
+  document.getElementById('check1').onchange = function() {
+    document.getElementById('table1').style.display = this.checked ? 'block' : 'none';
+  };
+  document.getElementById('check2').onchange = function() {
+    document.getElementById('table2').style.display = this.checked ? 'block' : 'none';
+  };
+</script>
+
+{%formfield player.q22 %}
+{%formfield player.q23 %}
+{%formfield player.q24 %}
+
+
+
+
+<div class="container">
+        	<div class="row">
+        		&nbsp;
+        	</div>
+        	<div class="row" style="padding-left:95%;">
+        		<div class="col-md-10">
+
+        		</div>
+        		<div class="col-md-2">
+              <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        		</div>
+
+        	</div>
+        </div>
+
+{% endblock %}

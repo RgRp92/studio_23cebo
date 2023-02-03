@@ -1,0 +1,114 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Fase 4 Questionario
+<p></p>
+<p></p>
+<p> GESTIONE DEL RISCHIO <p></p>
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "global/empty3.css" %}">
+
+<p>16. Quali motivi la spingono ad aderire ai Fondi Mutualisitici? (Possibile barrare più caselle) </p>
+        <table class="table" style="width:100%;">
+            <tr style="hover">
+            <td scope="row"  colspan="1" >A. &nbsp; COSTI DI ADESIONE ALLA COPERTURA MUTUALISTICA BASSI </td>
+			<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q16_a"> </td>
+			</tr>
+            <tr>
+			<td scope="row"  colspan="1" >B. &nbsp; GLI INDENNIZZI CHE POTREI RICEVERE SONO ALTI</td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q16_b"> </td>
+					</tr>
+			<tr>
+			<td scope="row"  colspan="1" >C. &nbsp; LO FACCIO OGNI ANNO</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q16_c"> </td>
+				</tr>
+			<tr>
+			<td scope="row"  colspan="1" >D. &nbsp; CONDIVISIBILI I CRITERI DI FUNZIONAMENTO DELLO STRUMENTO </td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q16_d"> </td>
+				<tr>
+			</tr>
+			<td scope="row"  colspan="1" >E. &nbsp; SONO STRUMENTI CHE MI GARANTISCONO UNA MAGGIORE COPERTURA
+			A RISCHI GIÀ COPERTI DA ALTRI STURMENTI DI DIFESA PASSIVA (ASSICURAZIONE)</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q16_e"> </td>
+        </tr>
+			<td scope="row"  colspan="1" >F. &nbsp; SONO STRUMENTI CHE MI GARANTISCONO UNA MAGGIORE COPERTURA
+			A RISCHI CHE NON SONO COPERTI DA ALTRI STURMENTI DI DIFESA PASSIVA (ASSICURAZIONE)</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q16_f"> </td>
+        </tr>
+			<td scope="row"  colspan="1" >G. &nbsp; SONO STRUMENTI CHE MI GARANTISCONO UNA MAGGIORE COPERTURA
+			A RISCHI GIÀ COPERTI DA ALTRI STURMENTI DI DIFESA ATTIVA (RETI, ANTI-BRINA, IRRIGAZIONE)</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q16_g"> </td>
+        </tr>
+			<td scope="row"  colspan="1" >H. &nbsp; MI È STATO CONSIGLIATO DA ASSICURATORE/INTERMEDIARIO/COMPAGNIA ASSICURATIVA</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q16_h"> </td>
+        </tr>
+			<td scope="row"  colspan="1" >I. &nbsp; MI È STATO CONSIGLIATO DA CO.DI.PR.A./ COOPERATIVA DI APPARTENENZA</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q16_i"> </td>
+        </tr>
+    </table>
+&nbsp;
+<p>17. Quali motivi la spingono a NON aderire ai Fondi Mutualisitici? (Possibile barrare più caselle) </p>
+        <table class="table" style="width:100%;" >
+            <tr>
+            <td scope="row"  colspan="1" >A. &nbsp; COSTI DI ADESIONE ALLA COPERTURA MUTUALISTICA ALTI </td>
+			<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q17_a"> </td>
+			</tr>
+            <tr>
+			<td scope="row"  colspan="1" >B. &nbsp; GLI INDENNIZZI CHE POTREI RICEVERE SONO BASSI</td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q17_b"> </td>
+					</tr>
+			<tr>
+			<td scope="row"  colspan="1" >C. &nbsp; NON COMPRENDO IL FUNZIONAMENTO DELLO STRUMENTO</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q17_c"> </td>
+				</tr>
+			<td scope="row"  colspan="1" >D. &nbsp; SONO STRUMENTI CHE NON MI GARANTISCONO UNA MAGGIORE COPERTURA
+			A RISCHI GIÀ COPERTI DA ALTRI STURMENTI DI DIFESA PASSIVA (ASSICURAZIONE)</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q17_d"> </td>
+        </tr>
+		<tr>
+        	<td scope="row"  colspan="1" >E. &nbsp; SONO STRUMENTI CHE NON  MI GARANTISCONO UNA MAGGIORE COPERTURA
+			A RISCHI GIÀ COPERTI DA ALTRI STURMENTI DI DIFESA ATTIVA (RETI, ANTI-BRINA, IRRIGAZIONE)</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q17_e"> </td>
+        </tr>
+			<tr>
+			<td scope="row"  colspan="1" >F. &nbsp; NON MI È STATO CONSIGLIATO DA ASSICURATORE/INTERMEDIARIO/COMPAGNIA ASSICURATIVA/ COOPERATIVA DI APPARTENENZA</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q17_f"> </td>
+        </tr>
+    </table>
+
+<div class="container">
+        	<div class="row">
+        		&nbsp;
+        	</div>
+        	<div class="row" style="padding-left:95%;">
+        		<div class="col-md-10">
+
+        		</div>
+        		<div class="col-md-2">
+              <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        		</div>
+
+        	</div>
+        </div>
+
+{% endblock %}

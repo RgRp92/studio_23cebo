@@ -1,0 +1,89 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+<h3> <span style="color:blue;"> LA RISPOSTA É ESATTA</span></h3>
+{% endblock %}
+{% block content %}
+
+<div class="w3-container border-top " style="padding-left:1%;font-size: 20px ">
+	<p></p>
+    <p>• Se il reddito varierà del +1% e +10%, il suo guadagno sarà: <b> 20444 €</b></p>
+	<p></p>
+<link rel="stylesheet" href="{% static "global/empty1.css" %}">
+	<table class="table-bordered" style="width : 100%;font-size:77%">
+<thead>
+  <tr>
+    <th scope="col"></th>
+    <th scope="col"></th>
+    <th scope="col" colspan="5" style="text-align:center">A</th>
+            <td scope="col" style="text-align:center; width: 1%"></td>
+    <th scope="col" colspan="5"  style="text-align:center">B</th>
+  </tr>
+</thead>
+  <thead>
+  <tr>
+    <td scope="col"></td>
+    <td scope="col" colspan="1" style="text-align:center; width: 5%"> Quota €/ettaro IST </td>
+    <th scope="col" colspan="5" style="text-align:center; width : 45%"> ADERIRE ALLA COPERTURA MUTUALISTICA (RIMBORSO 70%) </th>
+    <td scope="col" style="text-align:center; width: 1%"></td>
+    <th scope="col" colspan="5"  style="text-align:center;width : 45%">NON-ADERIRE ALLA COPERTURA MUTUALISTICA </th>
+  </tr>
+</thead>
+<tr>
+    <td rowspan="2"></td>
+    <td rowspan="2"></td>
+    <th colspan="5" scope="col" style="text-align:center;">Variazione  reddito </th>
+        <td scope="col" style="text-align:center; width: 1%"></td>
+    <th colspan="5" scope="col" style="text-align:center;">Variazione  reddito </th>
+</tr>
+      <tr> <th colspan="1" scope="col" style="text-align:center;">-{{var1}}% • -{{var11}}%</th>
+    <th scope="col" colspan="1" style="text-align:center;"> -{{var2}}% • -{{var22}}%</th>
+    <th scope="col" colspan="1" style="text-align:center;">-{{var3}}% • {{var33}}%</th>
+    <th scope="col" colspan="1" style="text-align:center;"> +{{var4}}% • +{{var44}}%</th>
+    <th scope="col" colspan="1" style="text-align:center;"> +{{var5}}% • +{{var55}}%</th>
+        <td scope="col" style="text-align:center; width: 1%"></td>
+    <th colspan="1" scope="col" style="text-align:center;"> -{{var1}}% • -{{var11}}%</th>
+    <th scope="col" colspan="1" style="text-align:center;"> -{{var2}}% • -{{var22}}%</th>
+    <th scope="col" colspan="1" style="text-align:center;">-{{var3}}% • {{var33}}%</th>
+    <th scope="col" colspan="1" style="text-align:center;"> +{{var4}}% • +{{var44}}%</th>
+    <th scope="col" colspan="1" style="text-align:center;"> +{{var5}}% • +{{var55}}%</th>
+<tbody>
+<!-- Row 1 -->
+  <tr>
+    <th rowspan="2" scope="row" style="text-align:center">4</th>
+    <td rowspan="2" style="text-align:center; horizontal align: middle"> 991 €</td>
+   <td style="text-align:center; background-color:white"> 17892€  </td>
+    <td style="text-align:center; background-color:#e6e6e6;"> 16361€</td>
+    <td style="text-align:center;background-color:#e6e6e6 "> 18403€  </td>
+    <td style="text-align:center;background-color:#e6e6e6"> 20444€</td>
+    <td style="text-align:center; background-color:#e6e6e6"> 22486€  </td>
+        <td scope="col" style="text-align:center; width: 1%"></td>
+    <td style="text-align:center;background-color:#e6e6e6"> 15311€</td>
+    <td style="text-align:center;background-color:white"> 17353€ </td>
+    <td style="text-align:center;background-color:white"> 19394€</td>
+    <td style="text-align:center;background-color:white"> 21436}€ </td>
+    <td style="text-align:center;background-color:white"> 23477€</td>
+  </tr>
+<tr>
+    <td style="text-align:center;background-color:#ccff99 "> +2581 </td>
+    <td style="text-align:center; background-color:#ffd6cc "> -991</td>
+    <td style="text-align:center; background-color:#ffd6cc"> -991  </td>
+    <td style="text-align:center;background-color:#ffd6cc"> -991</td>
+    <td style="text-align:center;  background-color:#ffd6cc"> -991  </td>
+        <td scope="col" style="text-align:center; width: 1%"></td>
+    <td style="text-align:center;background-color:#ffd6cc"> -2581</td>
+    <td style="text-align:center;background-color:#ccff99"> +991 </td>
+    <td style="text-align:center;background-color:#ccff99"> +991</td>
+    <td style="text-align:center;background-color:#ccff99"> +991 </td>
+    <td style="text-align:center;background-color:#ccff99"> +991</td>
+  </tr>
+</tbody>
+	</table>
+
+
+</div>
+
+
+
+{% endblock %}

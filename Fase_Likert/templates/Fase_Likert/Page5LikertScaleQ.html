@@ -1,0 +1,132 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+<p></p>
+<p></p>
+{% endblock %}
+{% block content %}
+        	<link rel="stylesheet" href="{% static "global/empty3.css" %}">
+
+        <table class="table" style="width:100%" >
+        <tr style="background-color: white; text-align:center" >
+			<td colspan="1" width="35%"> <b> FIDUCIA</b> </td>
+			<td colspan="1" width="14%"> Mai </td>
+			<td colspan="1" width="14%"> Quasi mai </td>
+			<td colspan="1" width="14%"> Qualche volta </td>
+			<td colspan="1" width="14%"> Spesso </td>
+			<td colspan="1" width="14%"> Sempre </td>
+		</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Mi fido del sistema coopeartivo trentino</td>
+			{% for choice in form.qf1 %}
+          	<td style="padding-left:3%">{{ choice }}</td>
+          {% endfor %}
+		</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Faccio affidamento a strumenti attivi di gestione del rischio (reti anti-brina, sistemai anti-gelo,
+			irrigazione)</td>
+			{% for choice in form.qf2 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Mi fido degli intermediario/assicuratore/assicurazione per la scelta degli strumenti di gestione del rischio</td>
+			{% for choice in form.qf3 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Mi affido al Co.Di.Pr.A. per le scelte di gestione del rischio</td>
+			{% for choice in form.qf4 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+			<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Mi fido delle opinioni di esperti del settore (agronomi, periti agrari)</td>
+			{% for choice in form.qf5 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+			<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Mi fido degli altri agricoltori.</td>
+			{% for choice in form.qf6 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+			</tr>
+			<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Faccio affidamento alla Camera di Commercio I.A.A (industria, artigianato, agricoltura) per
+				recuperare informazioni rilevanti per la mia azienda agricola</td>
+			{% for choice in form.qf7 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+</table>
+<p></p>
+<div></div>
+<p></p>
+<table class="table" style="width:100%">
+        <tr style="background-color: white; text-align:center" >
+			<td colspan="1" width="35%">  <b> COOPERAZIONE</b> </td>
+			<td colspan="1" width="14%"> Mai </td>
+			<td colspan="1" width="14%"> Quasi mai </td>
+			<td colspan="1" width="14%"> Qualche volta </td>
+			<td colspan="1" width="14%"> Spesso </td>
+			<td colspan="1" width="14%"> Sempre </td>
+		</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">In passato ho cooperato con altri produttori </td>
+			{% for choice in form.qc1 %}
+          	<td style="padding-left:3%">{{ choice }}</td>
+          {% endfor %}
+		</tr>
+		<tr style="text-align:center">
+			<td align="middle" style="text-align:left;font-size: 14px">In passato ho scambiato informazioni rilevanti per la attività agricola con altri produttori &nbsp;</td>
+			{% for choice in form.qc2 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px; ">Preferisco strumenti di gestione del rischio cooperativi (es. Fondi Mutualistici)
+				all’ assicurazione</td>
+			{% for choice in form.qc3 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Partecipo alle assemblee dei soci</td>
+			{% for choice in form.qc4 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+		<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Partecipo agli eventi formativi proposti dal Co.Di.Pr.A.(es. Festival Agri Risk Management,
+				AgriRisk Future Day, Festival Meteorologia, webinar)</td>
+			{% for choice in form.qc5 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+	<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Faccio parte di una OP (organizzazione dei produttori)/td>
+			{% for choice in form.qc6 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+	<tr style="text-align:center">
+			<td style="text-align:left;font-size: 14px">Conferisco le mele ad una cooperativa, consorzio</td>
+			{% for choice in form.qc7 %}
+			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
+		</tr>
+</table>
+
+
+<div class="container">
+        	<div class="row">
+        		&nbsp;
+        	</div>
+        	<div class="row" style="padding-center:95%;">
+        		<div class="col-md-10">
+
+        		</div>
+        		<div class="col-md-2">
+              <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        		</div>
+
+        	</div>
+        </div>
+
+{% endblock %}
+
+

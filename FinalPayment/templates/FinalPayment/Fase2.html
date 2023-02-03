@@ -1,0 +1,132 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree %}
+{% load i18n %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** STYLES *** #}
+{# ****************************************************************************************************************** #}
+{% block styles %}
+    <link href="{% static 'bret/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    {% trans "Risultati" %}
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
+    <!-- information about results -->
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
+    {% if Constants.num_rounds == 1 %}
+        <div class="card card-info">
+            {% blocktrans trimmed %}
+                Hai scelto di raccogliere {{ boxes_collected }} di {{ boxes_total }} box.
+            {% endblocktrans %}
+
+            <br/>
+            {% blocktrans trimmed %}
+                La bomba era nascosta dietro la box nella riga {{ bomb_row }}, colonna {{ bomb_col }}.
+            {% endblocktrans %}
+
+            <br/><br/>
+            {% if bomb %}
+                {% blocktrans trimmed %}
+                    La bomba era tra le tue {{ boxes_collected }} box raccolte.<br/>
+                    Dunque, i tuoi compensi aggiuntivi da questa fase sono stati distrutti e il tuo compenso aggiuntivo è pari a {{ payoff }}.
+                {% endblocktrans %}
+            {% else %}
+                {% blocktrans trimmed %}
+                    Le box che hai raccolto non contengono la bomba.<br/>
+                    Quindi, recevi {{ box_value }} per ognuna delle {{ boxes_collected }} box
+                    che hai raccolto e quindi il tuo compenso aggiuntivo da questa fase è di  <b>{{ payoff }}</b>.
+                {% endblocktrans %}
+            {% endif %}
+        </div>
+
+    {% else %}
+        <div class="card card-info">
+            {% blocktrans trimmed with num_rounds=Constants.num_rounds %}
+                The table below summarizes the results of your decisions in the {{ num_rounds }} rounds played.
+            {% endblocktrans %}
+        </div>
+    {% endif %}
+
+
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
+    <!-- history table -->
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
+    {% if Constants.num_rounds > 1 %}
+        <div class="card">
+            <div class="card-header">
+                <b>{% trans "Round History" %}</b>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <th>{% trans "Round No." %}</th>
+                        <th>{% trans "No. of Boxes Collected" %}</th>
+                        <th>{% trans "Bomb Collected" %}</th>
+                        <th>{% trans "Round Payoff" %}</th>
+                    </tr>
+                    {% for p in player_in_all_rounds %}
+                    <tr>
+                        <td>{{ p.subsession.round_number }}</td>
+                        <td>{{ p.boxes_collected }}</td>
+                        <td>
+                            {% if p.bomb %}
+                                {% trans "Yes" %}
+                            {% else %}
+                                {% trans "No" %}
+                            {% endif %}
+                        </td>
+                        <td>{{ p.round_result }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+        <div class="card card-info">
+        {% if Constants.random_payoff %}
+                {% blocktrans trimmed %}
+                    For your payment, round number {{ round_to_pay }} was randomly chosen. <br/>
+                    Thus, your final payoff in this task amounts to {{ total_payoff }}.
+                {% endblocktrans %}
+        {% else %}
+                {% blocktrans trimmed %}
+                    Your final payoff is determined by the sum of all payoffs per round
+                    such that you final payoff in this task amounts to {{ total_payoff }}.
+                {% endblocktrans %}
+        {% endif %}
+        </div>
+    {% endif %}
+
+    <br/>
+<div class="container">
+        	<div class="row">
+        		&nbsp;
+        	</div>
+        	<div class="row" style="padding-left:95%;">
+        		<div class="col-md-10">
+
+        		</div>
+        		<div class="col-md-2">
+              <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Clicchi qui per procedere</span>
+             </button>
+        		</div>
+
+        	</div>
+        </div>
+{% endblock %}
