@@ -87,6 +87,7 @@ LANGUAGE_CODE = 'en'
 # e.g. EUR, GBP, CNY, JPY
 REAL_WORLD_CURRENCY_CODE = 'EUR'
 USE_POINTS = False
+TIME_ZONE = 'UTC'
 
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
