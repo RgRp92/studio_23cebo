@@ -16,6 +16,7 @@ class Constants(BaseConstants):
     num_rounds = 1
     players_per_group = None
     app_name = 'Fase1_SuperLite'
+    variation = random.randint(1, 100)
 
     # Colors picked with a good pallete
     hex_colors = ["#F8766D", "#00BFC4"]
@@ -76,15 +77,18 @@ class Player(BasePlayer):
     w_amt = models.FloatField(default=0,min=0,label="")
 
     def set_winning_bin(self):
-        self.participant.vars['variation'] = random.randint(1, 100)
 
-        if self.participant.vars['variation'] <= 30:
-            self.participant.vars['nw_bin'] = "1"
-        elif self.participant.vars['variation'] > 30 and self.participant.vars['variation'] <= 54:
-            self.participant.vars['nw_bin'] = "2"
-        elif self.participant.vars['variation'] > 54 and self.participant.vars['variation']<= 73:
+        if Constants.variation <= 7:
             self.participant.vars['nw_bin'] = "3"
-        elif  self.participant.vars['variation'] > 73 and self.participant.vars['variation']<= 88:
+        elif Constants.variation > 7 and Constants.variation <= 21:
             self.participant.vars['nw_bin'] = "4"
-        elif self.participant.vars['variation'] > 88 and self.participant.vars['variation']<= 100:
+        elif Constants.variation > 21 and Constants.variation <= 60:
             self.participant.vars['nw_bin'] = "5"
+        elif Constants.variation > 60 and Constants.variation <= 74:
+            self.participant.vars['nw_bin'] = "6"
+        elif Constants.variation > 74 and Constants.variation <= 87:
+            self.participant.vars['nw_bin'] = "7"
+        elif Constants.variation > 87 and Constants.variation <= 99:
+            self.participant.vars['nw_bin'] = "8"
+        elif Constants.variation > 99 and Constants.variation <= 100:
+            self.participant.vars['nw_bin'] = "9"
