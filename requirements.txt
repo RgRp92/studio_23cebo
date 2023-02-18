@@ -2,7 +2,7 @@
 # Locally, you should install requirements_base.txt
 -r requirements_base.txt
 otree==3.3.11
-pandas==1.4.1
+pandas
 otreeutils
 psycopg2>=2.8,<2.9
 sentry-sdk==1.1.0
