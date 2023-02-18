@@ -25,13 +25,8 @@ class Constants(BaseConstants):
 
 class Subsession(BaseSubsession):
     def creating_session(self):
-        num_participant = self.session.num_participants
-        if num_participant <= 10:
-            num_winners = 1
-        else:  num_winners = int(0.1*num_participant)
-        winners = random.sample(range(1,num_participant+1),num_winners)
+
         app = 1
-        self.session.vars["winners"] = winners
         self.session.vars["app"] = app
         self.session.vars["id"] = BasePlayer.id_in_group
 

@@ -58,14 +58,11 @@ class Player(BasePlayer):
         label='5. Pensa che la sua attività melicola sarà continuata nel futuro da un familiare?',
         widget=widgets.RadioSelect)
 
-    q6 = models.StringField(
-        choices=[['0', 'Rischi di produzione: grandine, gelate tardive, fitopatie'],
-                 ['1', 'Rischi di mercato: variazioni prezzo di vendita delle mele, aumento prezzi dei fattori di produzione (costo fitosanitari, prezzo conicimi, costo carburanti)'],
-                 ['2', 'Rischi finanziari:accesso ai mutui, mancanza di riserve finanziarie, debiti insoluti'],
-                 ['3', 'Rischi istituzionali: cambio regolamenti imprevisti (es. regolamentazione dei fitosanitari EU)'],
-                 ['4', 'Rischi personali: malattia personale, infortuni sul lavoro, problemi familiari']],
-        label='6. Quali sono i rischi maggiori che hanno inciso sul reddito aziendale (da mele) negli ultimi 3 anni?',
-        widget=widgets.RadioSelect)
+    q6_a1= models.BooleanField(blank = True, initial = False)
+    q6_a2= models.BooleanField(blank = True, initial = False)
+    q6_a3= models.BooleanField(blank = True, initial = False)
+    q6_a4= models.BooleanField(blank = True, initial = False)
+    q6_a5= models.BooleanField(blank = True, initial = False)
 
     q7_a1 = models.BooleanField(blank=True, initial=False)
     q7_a2 = models.BooleanField(blank=True, initial=False)
@@ -139,53 +136,41 @@ class Player(BasePlayer):
     q8_f4 = models.BooleanField(blank=True, initial=False)
     q8_f5 = models.BooleanField(blank=True, initial=False)
 
-    q9 = models.StringField(
-        choices=[['0','Variazione prezzi di mercato delle mele'],
-                 ['1','Variazione costo carburanti'],
-                 ['2','Variazione costo fertilizzanti'],
-                 ['3','Variazione costo energia'],
-                 ['4','Variazione costo manodopera'],
-                 ['5','Variazione costo packaging/imballaggio'],
-                 ['6','Variazione costi addebitati cooperativa'],
-                 ['7','Variazione costo macchinari'],
-                 ['8','Variazione regolamentazioni Europee'],
-                 ['9','Altro']],
-        label= '9. Quali sono i rischi di mercato che hanno inciso sul reddito aziendale (da mele) negli ultimi 3 anni?',
-        widget=widgets.RadioSelect)
+    q9_1 = models.BooleanField(blank=True, initial=False)
+    q9_2 = models.BooleanField(blank=True, initial=False)
+    q9_3 = models.BooleanField(blank=True, initial=False)
+    q9_4 = models.BooleanField(blank=True, initial=False)
+    q9_5 = models.BooleanField(blank=True, initial=False)
+    q9_6 = models.BooleanField(blank=True, initial=False)
+    q9_7 = models.BooleanField(blank=True, initial=False)
+    q9_8 = models.BooleanField(blank=True, initial=False)
+    q9_9 = models.BooleanField(blank=True, initial=False)
+    q9_10 = models.BooleanField(blank=True, initial=False)
 
-    q10 = models.StringField(
-        choices=[['0', 'Variazione prezzi di mercato delle mele'],
-                 ['1', 'Variazione costo carburanti'],
-                 ['2', 'Variazione costo fertilizzanti'],
-                 ['3', 'Variazione costo energia'],
-                 ['4', 'Variazione costo manodopera'],
-                 ['5', 'Variazione costo packaging/imballaggio'],
-                 ['6', 'Variazione costi addebitati cooperativa'],
-                 ['7', 'Variazione costo macchinari'],
-                 ['8', 'Variazione regolamentazioni Europee'],
-                 ['9', 'Altro']],
-        label='10. Quali sono i rischi di mercato che incideranno maggiormente sul reddito aziendale (da mele) nei prossimi 3 anni?',
-        widget=widgets.RadioSelect)
+    q10_1 = models.BooleanField(blank=True, initial=False)
+    q10_2 = models.BooleanField(blank=True, initial=False)
+    q10_3 = models.BooleanField(blank=True, initial=False)
+    q10_4 = models.BooleanField(blank=True, initial=False)
+    q10_5 = models.BooleanField(blank=True, initial=False)
+    q10_6 = models.BooleanField(blank=True, initial=False)
+    q10_7 = models.BooleanField(blank=True, initial=False)
+    q10_8 = models.BooleanField(blank=True, initial=False)
+    q10_9 = models.BooleanField(blank=True, initial=False)
+    q10_10 = models.BooleanField(blank=True, initial=False)
 
-    q11 = models.StringField(
-        choices=[['0', 'Variazione costo packaging/imballaggio'],
-                 ['1', 'Quantità e qualità produzione estera'],
-                 ['2', 'Quantità e qualità produzione da altre regioni italiane'],
-                 ['3', 'Variazioni riserve di mele (giacenze)'],
-                 ['4', 'Qualità mele prodotte'],
-                 ['5', 'Cambiamenteo nella domanda, abitudini alimentari e/o stili di vita dei consumatori']],
-        label='11. Quali sono state le cause che hanno inciso maggiormente sul prezzo delle mele negli ultimi 3 anni?',
-        widget=widgets.RadioSelect)
+    q11_1 = models.BooleanField(blank=True, initial=False)
+    q11_2 = models.BooleanField(blank=True, initial=False)
+    q11_3 = models.BooleanField(blank=True, initial=False)
+    q11_4 = models.BooleanField(blank=True, initial=False)
+    q11_5 = models.BooleanField(blank=True, initial=False)
+    q11_6 = models.BooleanField(blank=True, initial=False)
 
-    q12 = models.StringField(
-        choices=[['0', 'Variazione costo packaging/imballaggio'],
-                 ['1', 'Quantità e qualità produzione estera'],
-                 ['2', 'Quantità e qualità produzione da altre regioni italiane'],
-                 ['3', 'Variazioni riserve di mele (giacenze)'],
-                 ['4', 'Qualità mele prodotte'],
-                 ['5', 'Cambiamenteo nella domanda, abitudini alimentari e/o stili di vita dei consumatori']],
-        label='12. Quali sono le cause che incideranno maggiormente sul prezzo delle mele nei prossimi 3 anni?',
-        widget=widgets.RadioSelect )
+    q12_1 = models.BooleanField(blank=True, initial=False)
+    q12_2 = models.BooleanField(blank=True, initial=False)
+    q12_3 = models.BooleanField(blank=True, initial=False)
+    q12_4 = models.BooleanField(blank=True, initial=False)
+    q12_5 = models.BooleanField(blank=True, initial=False)
+    q12_6 = models.BooleanField(blank=True, initial=False)
 
     q13_a = models.BooleanField(blank=True, initial=False)
     q13_b = models.BooleanField(blank=True, initial=False)

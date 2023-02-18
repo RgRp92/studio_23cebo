@@ -74,41 +74,6 @@ class Player(BasePlayer):
     time_4 = models.IntegerField(choices=[[1, 'A'], [2, 'B']], widget=widgets.RadioSelectHorizontal, initial=0)
     time_5 = models.IntegerField(choices=[[1, 'A'], [2, 'B']], widget=widgets.RadioSelectHorizontal, initial=0)
 
-    q_time1 = models.StringField(
-        choices=[['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', '']],
-        label='Cooperazione',
-        widget=widgets.RadioSelectHorizontal,
-    )
-    q_time2 = models.StringField(
-        choices=[['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', '']],
-        label='Cooperazione',
-        widget=widgets.RadioSelectHorizontal,
-    )
-    q_time3 = models.StringField(
-        choices=[['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', '']],
-        label='Cooperazione',
-        widget=widgets.RadioSelectHorizontal,
-    )
-    q_time4 = models.StringField(
-        choices=[['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', '']],
-        label='Cooperazione',
-        widget=widgets.RadioSelectHorizontal,
-    )
-    q_time5 = models.StringField(
-        choices=[['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', '']],
-        label='Cooperazione',
-        widget=widgets.RadioSelectHorizontal,
-    )
-    q_time6 = models.StringField(
-        choices=[['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', '']],
-        label='Cooperazione',
-        widget=widgets.RadioSelectHorizontal,
-    )
-    q_time7 = models.StringField(
-        choices=[['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', '']],
-        label='Cooperazione',
-        widget=widgets.RadioSelectHorizontal,
-    )
     q_loss1 = models.StringField(
         choices=[['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', '']],
         label='Assimetria Informativa',
@@ -135,11 +100,6 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal,
     )
     q_loss6 = models.StringField(
-        choices=[['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', '']],
-        label='Assimetria Informativa',
-        widget=widgets.RadioSelectHorizontal,
-    )
-    q_loss7 = models.StringField(
         choices=[['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', '']],
         label='Assimetria Informativa',
         widget=widgets.RadioSelectHorizontal,

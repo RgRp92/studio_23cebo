@@ -62,15 +62,17 @@ Fase 4 Questionario
             <tr>
             <td scope="row"  colspan="1" >A. &nbsp; SI </td>
 			<td scope="col"  colspan="1" style="text-align:center">
-                <input class="form-check-input" type="checkbox" name="check1" id="check1" value="True"  onclick="showTable()"> </td>
+                <input class="form-check-input" type="checkbox" name="check1" id="check1" value="True"
+				onclick="document.getElementById('check2').disabled = this.checked;" onclick="showTable()" > </td>
 			</tr>
             <tr>
 			<td scope="row"  colspan="1" >B. &nbsp; NO</td>
             <td scope="col"  colspan="1" style="text-align:center">
-                <input class="form-check-input" type="checkbox" name="check2" value="True" id="check2" onclick="showTable()"> </td>
+                <input class="form-check-input" type="checkbox" name="check2" value="Disable" id="check2"
+					   onclick="document.getElementsByName('check1')[0].disabled = this.checked;"  onclick="showTable()"
+				 > </td>
 					</tr>
         </table>
-
 
 <div id="table1" style="display:none;">
  <p>20. Se SI, indichi una o più delle seguenti motivazioni(Possibile barrare più caselle) </p>
@@ -189,6 +191,9 @@ Fase 4 Questionario
 </div>
 
 <script>
+
+
+
   document.getElementById('check1').onchange = function() {
     document.getElementById('table1').style.display = this.checked ? 'block' : 'none';
   };

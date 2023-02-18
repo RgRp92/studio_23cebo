@@ -9,8 +9,34 @@
 <p> RISCHI PERCEPITI ED OGGETTIVI <p></p>
 {% endblock %}
 {% block content %}
-    {% formfield 'q6' %}
-
+<p>6. Quali sono i rischi maggiori che hanno inciso sul reddito aziendale (da mele) negli ultimi 3 anni? (Possibile barrare più caselle) </p>
+        <table class="table" style="width:100%;">
+            <tr style="hover">
+            <td scope="row"  colspan="1" >Rischi di produzione: grandine, gelate tardive, fitopatie </td>
+			<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q6_a1"> </td>
+			</tr>
+            <tr>
+			<td scope="row"  colspan="1" >Rischi di mercato: variazioni prezzo di vendita delle mele, aumento prezzi dei fattori di produzione (costo fitosanitari, prezzo conicimi, costo carburanti)</td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q6_a2"> </td>
+					</tr>
+			<tr>
+			<td scope="row"  colspan="1" >Rischi finanziari:accesso ai mutui, mancanza di riserve finanziarie, debiti insoluti</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q6_a3"> </td>
+				</tr>
+			<tr>
+			<td scope="row"  colspan="1" >Rischi istituzionali: cambio regolamenti imprevisti (es. regolamentazione dei fitosanitari EU) </td>
+            <td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q6_a4"> </td>
+				<tr>
+			</tr>
+			<td scope="row"  colspan="1" >Rischi personali: malattia personale, infortuni sul lavoro, problemi familiari</td>
+				<td scope="col"  colspan="1" style="text-align:center">
+                <input class="form-check-input" type="checkbox" value="True" name="q6_a5"> </td>
+        </tr>
+    </table>
 &nbsp;
 
 <div>
@@ -141,10 +167,6 @@
     </table>
 &nbsp;
 
-    {% formfield 'q9' %}
-    {% formfield 'q10' %}
-    {% formfield 'q11' %}
-    {% formfield 'q12' %}
 <div class="container">
         	<div class="row">
         		&nbsp;

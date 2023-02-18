@@ -5,6 +5,8 @@ import pandas as pd
 import random
 import json
 from random import choices
+import statistics
+
 
 def get_beldat(page_obj):
 
@@ -41,6 +43,7 @@ def set_beliefs_data(page_obj):
     nrounds = [1,2,3]
     nrounds = len(nrounds)
     page_obj.participant.vars["beliefs_num_rounds"] = nrounds
+
 
 class Page0(Page):
     def vars_for_template(self):
@@ -108,6 +111,22 @@ class Page9Quiz2bisPage(Page):
     def is_displayed(self):
         return self.round_number == 1 and self.participant.vars["quizf1"] != '1' and self.participant.vars['quiz2f1'] != '1'
 
+class PageFarmerInfo(Page):
+    form_model = 'player'
+    form_fields = ['income1','income2','income3',]
+    def vars_for_template(self):
+        # Set the belief data for the participant
+        set_beliefs_data(self)
+
+
+    def is_displayed(self):
+        return self.round_number == 1
+
+    def before_next_page(self):
+        self.player.avginc = statistics.mean([self.player.income1, self.player.income2, self.player.income3])
+        self.player.avginc = round(self.player.avginc, 2)
+        self.participant.vars['avginc']= self.player.avginc
+
 class Page10ProvaStrumento(Page):
     def vars_for_template(self):
             # Set the belief data for the participant
@@ -164,6 +183,14 @@ class Page_Wait(Page):
 
 
 class Page23MyWaitPage(Page):
+    def vars_for_template(self):
+        return {
+            'inc1': self.player.income1,
+            'inc2': self.player.income2,
+            'inc3': self.player.income3,
+            'avginc': self.participant.vars['avginc'],
+        }
+
     def is_displayed(self):
         return self.round_number == 1
 
@@ -215,9 +242,10 @@ class Page24FarmerChoice(Page):
 
 
     def before_next_page(self):
-        choice = [getattr(self.player, "bin" + str(b)) for b in range(1,10)]
+        choice = [getattr(self.player, "bin" + str(b)) for b in range(1,11)]
         self.participant.vars["beliefs_choice"].append(choice)
         self.player.set_winning_bin()
+        self.session.vars["variation"] = random.randint(1, 100)
 
 
     def is_displayed(self):
@@ -227,6 +255,7 @@ class Page24FarmerChoice(Page):
 
 class Page26Farmer1ChoiceResult(Page):
     form_model = "player"
+
 
     def vars_for_template(self):
         # Select a round at random for payment
@@ -317,11 +346,7 @@ class Page26Farmer1ChoiceResult(Page):
 
 page_sequence = [
     Page0,
-    Page9QuizPage,
-    Page9QuizPageRight,
-    Page9Quiz2Page,
-    Page9Quiz2PageRight,
-    Page9Quiz2bisPage,
+PageFarmerInfo,
     Page10ProvaStrumento,
     Page_Wait,
     Page23MyWaitPage,

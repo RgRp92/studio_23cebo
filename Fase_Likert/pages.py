@@ -28,8 +28,6 @@ class Results(Page):
     form_model = 'player'
 
 page_sequence = [Page0,
-                 Page1,
                  Page1Risk_Pref,
                  Page2Time_Pref,
-                 Page3Loss_Aversion,
-                 Results]
+                 Page3Loss_Aversion]

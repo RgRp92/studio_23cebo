@@ -16,6 +16,7 @@ class Constants(BaseConstants):
     num_rounds = 1
     players_per_group = None
     app_name = 'Fase1_SuperLite'
+    variation = random.randint(1, 100)
 
     # Colors picked with a good pallete
     hex_colors = ["#F8766D", "#00BFC4"]
@@ -28,10 +29,16 @@ class Subsession(BaseSubsession):
         self.session.vars["beliefs_farm_dat"] = farm_dat
         self.session.vars["beliefs_hex_colors"] = ["#ff9933", "#00BFC4"]
 
+
 class Group(BaseGroup):
     pass
 
 class Player(BasePlayer):
+    income1 = models.FloatField(default=0, min=1, label="")
+    income2 = models.FloatField(default=0, min=1, label="")
+    income3 = models.FloatField(default=0, min=1, label="")
+    avginc = models.FloatField(default=0, min=1, label="")
+
     quizf1 = models.CharField(choices=[['2', '4.39 €'],['2', '5.69 €'],['1','7.79 €']],
                                widget= widgets.RadioSelectHorizontal,
                                label='1. In base alla figura mostrata quale sarà il suo guadagno se il reddito varierà tra +1% e +10%?',
@@ -74,15 +81,18 @@ class Player(BasePlayer):
     w_amt = models.FloatField(default=0,min=0,label="")
 
     def set_winning_bin(self):
-        self.participant.vars['variation'] = random.randint(1, 100)
 
-        if self.participant.vars['variation'] <= 30:
-            self.participant.vars['nw_bin'] = "1"
-        elif self.participant.vars['variation'] > 30 and self.participant.vars['variation'] <= 54:
-            self.participant.vars['nw_bin'] = "2"
-        elif self.participant.vars['variation'] > 54 and self.participant.vars['variation']<= 73:
+        if Constants.variation <= 7:
             self.participant.vars['nw_bin'] = "3"
-        elif  self.participant.vars['variation'] > 73 and self.participant.vars['variation']<= 88:
+        elif Constants.variation > 7 and Constants.variation <= 19:
             self.participant.vars['nw_bin'] = "4"
-        elif self.participant.vars['variation'] > 88 and self.participant.vars['variation']<= 100:
+        elif Constants.variation > 19 and Constants.variation<= 58:
             self.participant.vars['nw_bin'] = "5"
+        elif  Constants.variation > 58 and Constants.variation<= 67:
+            self.participant.vars['nw_bin'] = "6"
+        elif Constants.variation > 67 and Constants.variation<= 84:
+            self.participant.vars['nw_bin'] = "7"
+        elif Constants.variation > 84 and Constants.variation <= 94:
+            self.participant.vars['nw_bin'] = "8"
+        elif Constants.variation > 94 and Constants.variation <= 100:
+            self.participant.vars['nw_bin'] = "9"

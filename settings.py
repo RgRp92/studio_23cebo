@@ -7,13 +7,13 @@ dict(
         name='Studio_23_Lite',
         display_name="Studio_23_Lite",
         num_demo_participants=2,
-        app_sequence=['Intro_Lite','Fase1_SuperLite', 'bret_Lite', 'Fase_Likert', 'Fase4', 'FinalPaymentSuperLite']
+        app_sequence=['Intro_Lite','Fase1_Lite', 'bret_Lite', 'Fase_Likert', 'Fase4', 'FinalPayment']
      ),
     dict(
         name='Studio_23',
         display_name="Studio_23",
         num_demo_participants=2,
-        app_sequence=['Intro','Fase1NEW', 'bret', 'Fase_Likert', 'Fase4', 'FinalPaymentSuperLite']
+        app_sequence=['Intro','Fase1NEW', 'bret', 'Fase_Likert', 'Fase4', 'FinalPayment']
      ),
     dict(
         name='Fase1NEW',
@@ -31,13 +31,13 @@ dict(
         name='Fase1_Lite',
         display_name="Fase1_Lite",
         num_demo_participants=1,
-        app_sequence=['Fase1_Lite', 'FinalPaymentSuperLite']
+        app_sequence=['Fase1_Lite', 'FinalPayment']
      ),
     dict(
-        name='Intro',
-        display_name="Intro",
-        num_demo_participants=30,
-        app_sequence=['Intro']
+        name='Intro_Lite',
+        display_name="Intro_Lite",
+        num_demo_participants=2,
+        app_sequence=['Intro_Lite']
      ),
     dict(
         name='FinalPaymentSuperLite',
@@ -65,9 +65,9 @@ dict(
     ),
     dict(
         name='Fase_Likert',
-        display_name="Fase_Likert",
+        display_name="Questionario_finale",
         num_demo_participants=1,
-        app_sequence=['Fase_Likert']
+        app_sequence=['Fase_Likert','Fase4']
     )
 ]
 

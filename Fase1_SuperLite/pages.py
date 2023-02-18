@@ -105,7 +105,7 @@ class Page24FarmerChoice(Page):
 
 
     def before_next_page(self):
-        choice = [getattr(self.player, "bin" + str(b)) for b in range(1,10)]
+        choice = [getattr(self.player, "bin" + str(b)) for b in range(1,11)]
         self.participant.vars["beliefs_choice"].append(choice)
         self.player.set_winning_bin()
 

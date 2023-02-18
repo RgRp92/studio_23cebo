@@ -3,31 +3,19 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 import random
-class NotWinner(Page):
 
 
-    def vars_for_template(self):
-        return {
-        "winners": self.session.vars["winners"],
-        'app' : self.session.vars["app"],
-        'id':   self.player.id_in_group
-        }
-
-    def is_displayed(self):
-        return self.player.id_in_group not in self.session.vars["winners"]
 
 class Winner(Page):
 
 
     def vars_for_template(self):
         return {
-        "winners": self.session.vars["winners"],
         'app' : self.session.vars["app"],
         'id':   self.player.id_in_group
         }
 
-    def is_displayed(self):
-        return self.player.id_in_group in self.session.vars["winners"]
+
 
 class ResultsWaitPage(WaitPage):
     pass
@@ -41,7 +29,7 @@ class Fase1(Page):
         }
 
     def is_displayed(self):
-        return self.session.vars["app"] == 1 and self.player.id_in_group in self.session.vars["winners"]
+        return self.session.vars["app"] == 1
 
     def before_next_page(self):
         self.player.payoff = round(self.participant.vars["w_amt"],2)
@@ -86,7 +74,7 @@ class Fase2(Page):
         }
 
     def is_displayed(self):
-        return self.session.vars["app"] == 2 and self.player.id_in_group in self.session.vars["winners"]
+        return self.session.vars["app"] == 2
     def before_next_page(self):
         self.player.payoff = round((self.participant.vars["payoff_HL"]/1000)* self.participant.vars['rate'],2)
 
@@ -137,7 +125,7 @@ class Fase3(Page):
         }
 
     def is_displayed(self):
-        return self.session.vars["app"] == 3 and self.player.id_in_group in self.session.vars["winners"]
+        return self.session.vars["app"] == 3
 
     def before_next_page(self):
         self.player.payoff = round((self.participant.vars["payoff_HLr"]/1000) * self.participant.vars['rrate'],1)
@@ -150,4 +138,4 @@ class goodbye(Page):
         'id':   self.player.id_in_group
         }
 
-page_sequence = [NotWinner, Winner, Fase1, Fase2,Fase3, goodbye]
+page_sequence = [ Winner, Fase1, Fase2,Fase3, goodbye]
