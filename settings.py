@@ -24,8 +24,8 @@ dict(
     dict(
         name='Fase1_SuperLite',
         display_name="Fase1_SuperLite",
-        num_demo_participants=1,
-        app_sequence=['Fase1_SuperLite']
+        num_demo_participants=10,
+        app_sequence=['Fase1_SuperLite', 'FinalPaymentSuperLite']
      ),
     dict(
         name='Fase1_Lite',
