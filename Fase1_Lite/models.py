@@ -84,15 +84,15 @@ class Player(BasePlayer):
 
         if Constants.variation <= 7:
             self.participant.vars['nw_bin'] = "3"
-        elif Constants.variation > 7 and Constants.variation <= 19:
+        elif Constants.variation > 7 and Constants.variation <= 21:
             self.participant.vars['nw_bin'] = "4"
-        elif Constants.variation > 19 and Constants.variation<= 58:
+        elif Constants.variation > 21 and Constants.variation<= 60:
             self.participant.vars['nw_bin'] = "5"
-        elif  Constants.variation > 58 and Constants.variation<= 67:
+        elif  Constants.variation > 60 and Constants.variation<= 74:
             self.participant.vars['nw_bin'] = "6"
-        elif Constants.variation > 67 and Constants.variation<= 84:
+        elif Constants.variation > 74 and Constants.variation<= 87:
             self.participant.vars['nw_bin'] = "7"
-        elif Constants.variation > 84 and Constants.variation <= 94:
+        elif Constants.variation > 87 and Constants.variation <= 99:
             self.participant.vars['nw_bin'] = "8"
-        elif Constants.variation > 94 and Constants.variation <= 100:
+        elif Constants.variation > 99 and Constants.variation <= 100:
             self.participant.vars['nw_bin'] = "9"

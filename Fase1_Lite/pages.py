@@ -245,7 +245,6 @@ class Page24FarmerChoice(Page):
         choice = [getattr(self.player, "bin" + str(b)) for b in range(1,11)]
         self.participant.vars["beliefs_choice"].append(choice)
         self.player.set_winning_bin()
-        self.session.vars["variation"] = random.randint(1, 100)
 
 
     def is_displayed(self):
