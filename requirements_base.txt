@@ -1,5 +1,5 @@
 otree==3.3.11
-pandas
+pandas==1.4.1
 otreeutils
 psycopg2>=2.8,<2.9
 sentry-sdk==1.1.0
