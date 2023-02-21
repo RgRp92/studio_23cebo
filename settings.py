@@ -61,7 +61,7 @@ dict(
         name='bret_Lite',
         display_name="bret_Lite",
         num_demo_participants=1,
-        app_sequence=['bret_Lite','FinalPaymentSuperLite']
+        app_sequence=['bret_Lite','FinalPayment']
     ),
     dict(
         name='Fase_Likert',

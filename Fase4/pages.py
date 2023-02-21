@@ -34,9 +34,9 @@ class Page2AgriAct1A(Page):
 
 class Page3AgriAct2(Page):
     form_model = 'player'
-    form_fields = ['q13_a','q13_b','q13_c','q13_d','q13_e',
-                   'q14_a','q14_b','q14_c','q14_d','q14_e',
-                   'q15_a','q15_b','q15_c','q15_d','q15_e',]
+    form_fields = ['q13_a','q13_b','q13_c','q13_d','q13_e','q13_f',
+                   'q14_a','q14_b','q14_c','q14_d','q14_e', 'q14_f',
+                   'q15_a','q15_b','q15_c','q15_d','q15_e','q15_f']
 
 class Page3AgriAct3(Page):
     form_model = 'player'

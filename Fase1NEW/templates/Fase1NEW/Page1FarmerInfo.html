@@ -2,50 +2,75 @@
 {% load otree static %}
 
 {% block title %}
-<h3>ISTRUZIONI</h3>
 {% endblock %}
+
 {% block content %}
+<h1>ISTRUZIONI</h1>
+<h3> </h3>
+<p />
 <link rel="stylesheet" href="{% static "global/farmerchoice.css" %}">
-<div class="w3-container border-top border-bottom" style="font-size: 22px">
-    <p></p>
-    <p> Assuma che a Gennaio 2023 Lei sia in possesso di un'azienda con le seguenti caratteristiche:</p>
-<ul>
-    <li> La sua area a melo è pari a <b>2,23 ettari</b>.</li>
-    <p />
-    <li> Ha sottoscritto la polizza multirischio Co.Di.Pr.A. Il premio pagato è di <b>4.765 € ad ettaro</b>. </li>
-    <p />
-	<li> Il valore di mele assicurato è di <b>27.802 € ad ettaro</b>. </li>
-    <p />
-    <li> I suoi costi (esclusi ammortamenti e costi per il personale) per la produzione sono pari a <b>5.843€ ad ettaro</b>.</li>
-</ul>
+<div class="w3-container border-top border-bottom" style="font-size: 22px">    <p></p>
+    <p> Inserisci le seguenti caratteristiche relative al reddito da mele ad ettaro della tua azienda:</p>
 </div>
 
-
-<div class="w3-container border-bottom" style="font-size: 21px">
-    <h5 style="text-align:center"> I suoi redditi ad ettaro nel triennio 2020 - 2022 e il suo reddito medio</h5>
+<p />
+<div class="w3-container border-bottom">
+    <h5 style="text-align:center"> I suoi redditi ad ettaro nel triennio 2020 - 2022</h5>
     <table class="table-bordered" style="width:100%">
         <tr style="background-color:#ffb380">
-            <th scope="col"  colspan="1" style="text-align:center">  </th>
+            <th scope="col"  colspan="1" style="text-align:center"> Anno </th>
             <th scope="col"  colspan="1" style="text-align:center"> 2020 (Produzione 2019) </th>
-            <th scope="col"  colspan="1" style="text-align:center"> 2021 (Produzione 2020)</th>
-            <th scope="col"  colspan="1" style="text-align:center"> 2022 (Produzione 2021)</th>
-            <th scope="col"  colspan="1" style="text-align:center"> MEDIA 2020 - 2022</th>
+            <th scope="col"  colspan="1" style="text-align:center"> 2021 (Produzione 2020) </th>
+            <th scope="col"  colspan="1" style="text-align:center"> 2022 (Produzione 2021) </th>
+            <th scope="col"  colspan="1" style="text-align:center"> MEDIA 2019 - 2021 </th>
         </tr>
         <tr style="background-color:#ffe0cc">
-            <td scope="col"  colspan="1" style="text-align:center; width: 250px;"> Reddito ad ettaro (Liquidato + Risarcimenti)</td>
-            <td style="text-align:center"> 16.179 € ad ettaro</td>
-            <td style="text-align:center"> 21.827 € ad ettaro</td>
-            <td style="text-align:center"> 23.238 € ad ettaro</td>
-            <td style="text-align:center"> 20.415 € ad ettaro</td>
-        </tr>
+            <td scope="col"  colspan="1" style="text-align:center; width: 200px;"> Reddito ad ettaro (Liquidato + Risarcimenti)</td>
+            <td> <input class="income_input" id="income1" type="number" name="income1" min="0" step="0.01" > €/ha</td>
+            <td> <input class="income_input" id="income2" type="number" name="income2" min="0" step="0.01"> €/ha</td>
+            <td> <input class="income_input" id="income3" type="number" name="income3" min="0" step="0.01"> €/ha</td>
+            <td> <span id="avginc" ></span> €/ha</td>
         </tr>
     </table>
-    <p></p>
-    &nbsp;
-    <p> Il reddito medio è calcolato considerando i ricavi della vendita delle Mele al netto dei costi
-    (costi che come da Regolamento IST, considerano i costi di produzione diretti, escludendo ammortamenti e personale)</p>
-</div>
+<script>window.onload = init_average();
 
+function init_average(){
+	avginc =  document.getElementById("avginc");
+	income1 = document.getElementById("income1");
+	income2 = document.getElementById("income2");
+	income3 = document.getElementById("income3");
+
+  document.querySelectorAll('.income_input').forEach(item => {
+    item.addEventListener('change', event => {
+    	sum_incomes = get_input_value(income1) + get_input_value(income2) + get_input_value(income3);
+  		avginc.innerHTML = parseFloat(sum_incomes / 3).toFixed(2);
+    })
+  })
+
+}
+function get_input_value(input){
+	if(input.value == ''){
+  	return 0;
+  }
+  else {
+  	return parseFloat(input.value);
+  }
+}
+</script>
+
+<ul>
+  <p></p>
+    &nbsp;
+    <li> Il reddito medio è calcolato considerando i ricavi della vendita delle Mele al netto dei costi
+    (costi che come da Regolamento IST, considerano i costi di produzione diretti, escludendo ammortamenti e personale)</li>
+</ul>
+</div>
+<p></p>
+        	<div class="row" style="padding-left:75%;">
+              <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">DOPO AVER INSERITO I DATI CLICCARE QUI</span>
+             </button>
+            </div>
 
 
 {% endblock %}

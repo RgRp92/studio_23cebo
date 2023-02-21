@@ -345,7 +345,7 @@ class Page26Farmer1ChoiceResult(Page):
 
 page_sequence = [
     Page0,
-PageFarmerInfo,
+    PageFarmerInfo,
     Page10ProvaStrumento,
     Page_Wait,
     Page23MyWaitPage,

@@ -5,6 +5,7 @@ import pandas as pd
 import random
 import json
 from random import choices
+import statistics
 
 def get_beldat(page_obj):
 
@@ -51,6 +52,9 @@ class Page0(Page):
         return self.round_number == 1
 
 class Page1FarmerInfo(Page):
+    form_model = 'player'
+    form_fields = ['income1', 'income2', 'income3', ]
+
     def vars_for_template(self):
         # Set the belief data for the participant
         set_beliefs_data(self)
@@ -58,6 +62,10 @@ class Page1FarmerInfo(Page):
     def is_displayed(self):
         return self.round_number == 1
 
+    def before_next_page(self):
+        self.player.avginc = statistics.mean([self.player.income1, self.player.income2, self.player.income3])
+        self.player.avginc = round(self.player.avginc, 2)
+        self.participant.vars['avginc'] = self.player.avginc
 class Page2Interval(Page):
     def vars_for_template(self):
             # Set the belief data for the participant
@@ -157,64 +165,6 @@ class Page7Esempio2d(Page):
     def is_displayed(self):
         return self.round_number == 1
 
-class Page9QuizPage(Page):
-    form_model = 'player'
-    form_fields = ['quizf1']
-
-    def vars_for_template(self):
-            # Set the belief data for the participant
-        set_beliefs_data(self)
-
-    def before_next_page(self):
-        self.participant.vars['quizf1'] = self.player.quizf1
-
-    def is_displayed(self):
-        return self.round_number == 1
-
-class Page9QuizPageRight(Page):
-    form_model = 'player'
-
-    def vars_for_template(self):
-            # Set the belief data for the participant
-        set_beliefs_data(self)
-
-    def is_displayed(self):
-        return self.round_number == 1 and self.participant.vars['quizf1'] == '1'
-
-class Page9Quiz2Page(Page):
-    form_model = 'player'
-    form_fields = ['quiz2f1']
-
-    def vars_for_template(self):
-            # Set the belief data for the participant
-        set_beliefs_data(self)
-
-    def before_next_page(self):
-        self.participant.vars['quiz2f1'] = self.player.quiz2f1
-
-    def is_displayed(self):
-        return self.round_number == 1 and self.participant.vars["quizf1"] != '1'
-
-class Page9Quiz2PageRight (Page):
-    form_model = 'player'
-
-    def vars_for_template(self):
-            # Set the belief data for the participant
-        set_beliefs_data(self)
-
-    def is_displayed(self):
-        return self.round_number == 1 and self.participant.vars["quizf1"] != '1' and self.participant.vars['quiz2f1'] == '1'
-
-class Page9Quiz2bisPage(Page):
-    form_model = 'player'
-
-    def vars_for_template(self):
-            # Set the belief data for the participant
-        set_beliefs_data(self)
-
-    def is_displayed(self):
-        return self.round_number == 1 and self.participant.vars["quizf1"] != '1' and self.participant.vars['quiz2f1'] != '1'
-
 class Page10ProvaStrumento(Page):
     def vars_for_template(self):
             # Set the belief data for the participant
@@ -277,9 +227,13 @@ class Page11Espertic(Page):
 
 
 class Page23MyWaitPage(Page):
-    def is_displayed(self):
-        return self.round_number == 1
-
+    def vars_for_template(self):
+        return {
+            'inc1': self.player.income1,
+            'inc2': self.player.income2,
+            'inc3': self.player.income3,
+            'avginc': self.participant.vars['avginc'],
+        }
 class Page24FarmerChoice(Page):
     form_model = "player"
 
@@ -378,7 +332,7 @@ class Page26Farmer1ChoiceResult(Page):
                 prev_player.bin4 ** 2 + prev_player.bin5 ** 2 + prev_player.bin6 ** 2 + prev_player.bin7 ** 2 + prev_player.bin8 ** 2
                 + prev_player.bin9 ** 2 + prev_player.bin10 ** 2))
 
-        w_amt = round(self.player.w_amt, 2)
+        w_amt = round(self.player.w_amt, 1)
 
         choices_made = self.participant.vars["beliefs_choice"]
 
@@ -424,7 +378,6 @@ class Page26Farmer1ChoiceResult(Page):
         self.participant.vars["w_amt"] = round(self.player.w_amt, 2)
 
     def app_after_this_page(self, upcoming_apps):
-        if self.player.rip1 == '0':
             return 'bret'
 
 
@@ -444,11 +397,6 @@ page_sequence = [
     Page7Esempio2ac,
     #Page7Esempio2b,
     #Page7Esempio2d,
-    Page9QuizPage,
-    Page9QuizPageRight,
-    Page9Quiz2Page,
-    Page9Quiz2PageRight,
-    Page9Quiz2bisPage,
     Page10ProvaStrumento,
     Page11Esperti,
     Page11Espertia,

@@ -39,7 +39,7 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect,
     )
     q3 = models.StringField(
-        choices=[['0', 'Scuola elementare'], ['1', 'Diploma scuola superiore'],
+        choices=[['0', 'Scuola elementare/media'], ['1', 'Diploma scuola superiore'],
                  ['2', 'Laurea 3 anni'], ['3', 'Laurea 5 anni'], ['4', 'Master'],
                  ['5', 'Dottorato']],
         label='3. Titolo di studio',
@@ -177,18 +177,21 @@ class Player(BasePlayer):
     q13_c = models.BooleanField(blank=True, initial=False)
     q13_d = models.BooleanField(blank=True, initial=False)
     q13_e = models.BooleanField(blank=True, initial=False)
+    q13_f = models.BooleanField(blank=True, initial=False)
 
     q14_a = models.BooleanField(blank=True, initial=False)
     q14_b = models.BooleanField(blank=True, initial=False)
     q14_c = models.BooleanField(blank=True, initial=False)
     q14_d = models.BooleanField(blank=True, initial=False)
     q14_e = models.BooleanField(blank=True, initial=False)
+    q14_f = models.BooleanField(blank=True, initial=False)
 
     q15_a = models.BooleanField(blank=True, initial=False)
     q15_b = models.BooleanField(blank=True, initial=False)
     q15_c = models.BooleanField(blank=True, initial=False)
     q15_d = models.BooleanField(blank=True, initial=False)
     q15_e = models.BooleanField(blank=True, initial=False)
+    q15_f = models.BooleanField(blank=True, initial=False)
 
     q16_a = models.BooleanField(blank=True, initial=False)
     q16_b = models.BooleanField(blank=True, initial=False)

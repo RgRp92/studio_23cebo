@@ -86,4 +86,4 @@ class Constants(BaseConstants):
     # if <undoable = True> boxes can be selected and de-selected indefinitely often
     # if <undoable = False> boxes can be selected only once (i.e. decisions can not be undone)
     # note that this only affects game play if <dynamic = False> and <devils_game = True>
-    undoable = True
+    undoable = False
