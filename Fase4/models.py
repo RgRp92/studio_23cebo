@@ -67,74 +67,59 @@ class Player(BasePlayer):
     q7_a1 = models.BooleanField(blank=True, initial=False)
     q7_a2 = models.BooleanField(blank=True, initial=False)
     q7_a3 = models.BooleanField(blank=True, initial=False)
-    q7_a4 = models.BooleanField(blank=True, initial=False)
-    q7_a5 = models.BooleanField(blank=True, initial=False)
 
     q7_b1 = models.BooleanField(blank=True, initial=False)
     q7_b2 = models.BooleanField(blank=True, initial=False)
     q7_b3 = models.BooleanField(blank=True, initial=False)
-    q7_b4 = models.BooleanField(blank=True, initial=False)
-    q7_b5 = models.BooleanField(blank=True, initial=False)
 
     q7_c1 = models.BooleanField(blank=True, initial=False)
     q7_c2 = models.BooleanField(blank=True, initial=False)
     q7_c3 = models.BooleanField(blank=True, initial=False)
-    q7_c4 = models.BooleanField(blank=True, initial=False)
-    q7_c5 = models.BooleanField(blank=True, initial=False)
 
     q7_d1 = models.BooleanField(blank=True, initial=False)
     q7_d2 = models.BooleanField(blank=True, initial=False)
     q7_d3 = models.BooleanField(blank=True, initial=False)
-    q7_d4 = models.BooleanField(blank=True, initial=False)
-    q7_d5 = models.BooleanField(blank=True, initial=False)
 
     q7_e1 = models.BooleanField(blank=True, initial=False)
     q7_e2 = models.BooleanField(blank=True, initial=False)
     q7_e3 = models.BooleanField(blank=True, initial=False)
-    q7_e4 = models.BooleanField(blank=True, initial=False)
-    q7_e5 = models.BooleanField(blank=True, initial=False)
 
     q7_f1 = models.BooleanField(blank=True, initial=False)
     q7_f2 = models.BooleanField(blank=True, initial=False)
     q7_f3 = models.BooleanField(blank=True, initial=False)
-    q7_f4 = models.BooleanField(blank=True, initial=False)
-    q7_f5 = models.BooleanField(blank=True, initial=False)
+
+    q7_g1 = models.BooleanField(blank=True, initial=False)
+    q7_g2 = models.BooleanField(blank=True, initial=False)
+    q7_g3 = models.BooleanField(blank=True, initial=False)
 
     q8_a1 = models.BooleanField(blank=True, initial=False)
     q8_a2 = models.BooleanField(blank=True, initial=False)
     q8_a3 = models.BooleanField(blank=True, initial=False)
-    q8_a4 = models.BooleanField(blank=True, initial=False)
-    q8_a5 = models.BooleanField(blank=True, initial=False)
 
     q8_b1 = models.BooleanField(blank=True, initial=False)
     q8_b2 = models.BooleanField(blank=True, initial=False)
     q8_b3 = models.BooleanField(blank=True, initial=False)
-    q8_b4 = models.BooleanField(blank=True, initial=False)
-    q8_b5 = models.BooleanField(blank=True, initial=False)
 
     q8_c1 = models.BooleanField(blank=True, initial=False)
     q8_c2 = models.BooleanField(blank=True, initial=False)
     q8_c3 = models.BooleanField(blank=True, initial=False)
-    q8_c4 = models.BooleanField(blank=True, initial=False)
-    q8_c5 = models.BooleanField(blank=True, initial=False)
 
     q8_d1 = models.BooleanField(blank=True, initial=False)
     q8_d2 = models.BooleanField(blank=True, initial=False)
     q8_d3 = models.BooleanField(blank=True, initial=False)
-    q8_d4 = models.BooleanField(blank=True, initial=False)
-    q8_d5 = models.BooleanField(blank=True, initial=False)
 
     q8_e1 = models.BooleanField(blank=True, initial=False)
     q8_e2 = models.BooleanField(blank=True, initial=False)
     q8_e3 = models.BooleanField(blank=True, initial=False)
-    q8_e4 = models.BooleanField(blank=True, initial=False)
-    q8_e5 = models.BooleanField(blank=True, initial=False)
 
     q8_f1 = models.BooleanField(blank=True, initial=False)
     q8_f2 = models.BooleanField(blank=True, initial=False)
     q8_f3 = models.BooleanField(blank=True, initial=False)
-    q8_f4 = models.BooleanField(blank=True, initial=False)
-    q8_f5 = models.BooleanField(blank=True, initial=False)
+
+    q8_g1 = models.BooleanField(blank=True, initial=False)
+    q8_g2 = models.BooleanField(blank=True, initial=False)
+    q8_g3 = models.BooleanField(blank=True, initial=False)
+
 
     q9_1 = models.BooleanField(blank=True, initial=False)
     q9_2 = models.BooleanField(blank=True, initial=False)
@@ -165,7 +150,6 @@ class Player(BasePlayer):
     q11_5 = models.BooleanField(blank=True, initial=False)
     q11_6 = models.BooleanField(blank=True, initial=False)
 
-    q12_1 = models.BooleanField(blank=True, initial=False)
     q12_2 = models.BooleanField(blank=True, initial=False)
     q12_3 = models.BooleanField(blank=True, initial=False)
     q12_4 = models.BooleanField(blank=True, initial=False)
@@ -202,6 +186,7 @@ class Player(BasePlayer):
     q16_g = models.BooleanField(blank=True, initial=False)
     q16_h = models.BooleanField(blank=True, initial=False)
     q16_i = models.BooleanField(blank=True, initial=False)
+    q16_l = models.BooleanField(blank=True, initial=False)
 
     q17_a = models.BooleanField(blank=True, initial=False)
     q17_b = models.BooleanField(blank=True, initial=False)

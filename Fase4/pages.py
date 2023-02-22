@@ -13,12 +13,12 @@ class Page1Demographics(Page):
 class Page2AgriAct(Page):
         form_model = 'player'
         form_fields = ['q6_a1','q6_a2','q6_a3','q6_a4','q6_a5',
-                       'q7_a1', 'q7_b1', 'q7_c1','q7_d1','q7_e1','q7_f1',
-                       'q7_a2', 'q7_b2', 'q7_c2', 'q7_d2', 'q7_e2', 'q7_f2',
-                       'q7_a3', 'q7_b3', 'q7_c3', 'q7_d3', 'q7_e3', 'q7_f3',
-                       'q8_a1', 'q8_b1', 'q8_c1', 'q8_d1', 'q8_e1', 'q8_f1',
-                       'q8_a2', 'q8_b2', 'q8_c2', 'q8_d2', 'q8_e2', 'q8_f2',
-                       'q8_a3', 'q8_b3', 'q8_c3', 'q8_d3', 'q8_e3', 'q8_f3',]
+                       'q7_a1', 'q7_b1', 'q7_c1','q7_d1','q7_e1','q7_f1','q7_g1',
+                       'q7_a2', 'q7_b2', 'q7_c2', 'q7_d2', 'q7_e2', 'q7_f2','q7_g2',
+                       'q7_a3', 'q7_b3', 'q7_c3', 'q7_d3', 'q7_e3', 'q7_f3','q7_g3',
+                       'q8_a1', 'q8_b1', 'q8_c1', 'q8_d1', 'q8_e1', 'q8_f1','q8_g1',
+                       'q8_a2', 'q8_b2', 'q8_c2', 'q8_d2', 'q8_e2', 'q8_f2','q8_g2',
+                       'q8_a3', 'q8_b3', 'q8_c3', 'q8_d3', 'q8_e3', 'q8_f3', 'q8_g3',]
 class Page2AgriAct1(Page):
     form_model = 'player'
     form_fields = ['q9_1', 'q9_2', 'q9_3', 'q9_4', 'q9_5', 'q9_6',
@@ -28,8 +28,8 @@ class Page2AgriAct1(Page):
                    ]
 class Page2AgriAct1A(Page):
     form_model = 'player'
-    form_fields = ['q11_1', 'q11_2', 'q11_3', 'q11_4', 'q11_5', 'q11_6',
-                   'q12_1', 'q12_2', 'q12_3', 'q12_4', 'q12_5', 'q12_6',
+    form_fields = ['q11_2', 'q11_3', 'q11_4', 'q11_5', 'q11_6',
+                    'q12_2', 'q12_3', 'q12_4', 'q12_5', 'q12_6',
                    ]
 
 class Page3AgriAct2(Page):
@@ -40,7 +40,7 @@ class Page3AgriAct2(Page):
 
 class Page3AgriAct3(Page):
     form_model = 'player'
-    form_fields = ['q16_a','q16_b','q16_c','q16_d','q16_e','q16_f','q16_g','q16_h','q16_i',
+    form_fields = ['q16_a','q16_b','q16_c','q16_d','q16_e','q16_f','q16_g','q16_h','q16_i', 'q16_l',
                    'q17_a','q17_b','q17_c','q17_d','q17_e','q17_f']
 
 class Page4ISTsurvey(Page):

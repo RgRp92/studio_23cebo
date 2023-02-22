@@ -21,8 +21,7 @@ class Page2Time_Pref(Page):
 
 class Page3Loss_Aversion(Page):
     form_model = 'player'
-    form_fields = ['q_loss1', 'q_loss2', 'q_loss3', 'q_loss4',
-                   'q_loss5', 'q_loss6',  ]
+    form_fields = ['q_loss2', 'q_loss3', 'q_loss4','q_loss6',  ]
 
 class Results(Page):
     form_model = 'player'

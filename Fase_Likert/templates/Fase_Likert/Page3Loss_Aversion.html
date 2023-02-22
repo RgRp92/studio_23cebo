@@ -18,13 +18,6 @@
 			<td colspan="1" width="14%"> Completamente d'accordo </td>
 		</tr>
 		<tr style="text-align:center">
-			<td style="text-align:left;font-size: 14px">Quando prendo una decisione, penso molto di più a ciò che potrei perdere che a
-ciò che potrei guadagnare</td>
-			{% for choice in form.q_loss1 %}
-          	<td style="padding-left:3%">{{ choice }}</td>
-          {% endfor %}
-		</tr>
-		<tr style="text-align:center">
 			<td style="text-align:left;font-size: 14px">Perdere una somma di denaro è più rilevante che guadagnare una somma di
 denaro</td>
 			{% for choice in form.q_loss2 %}
@@ -39,12 +32,6 @@ una somma di denaro</td>
 		<tr style="text-align:center">
 			<td style="text-align:left;font-size: 14px">Evitare una perdita è più importante per me che ottenere un guadagno</td>
 			{% for choice in form.q_loss4 %}
-			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
-		</tr>
-					<tr style="text-align:center">
-			<td style="text-align:left;font-size: 14px">Un potenziale perdita di denaro mi spaventa di più di quanto mi incoraggi un
-potenziale guadagno di denaro</td>
-			{% for choice in form.q_loss5 %}
 			<td style="padding-left:3%">{{ choice }}</td>{% endfor %}
 		</tr>
 					<tr style="text-align:center">

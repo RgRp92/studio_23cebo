@@ -74,11 +74,7 @@ class Player(BasePlayer):
     time_4 = models.IntegerField(choices=[[1, 'A'], [2, 'B']], widget=widgets.RadioSelectHorizontal, initial=0)
     time_5 = models.IntegerField(choices=[[1, 'A'], [2, 'B']], widget=widgets.RadioSelectHorizontal, initial=0)
 
-    q_loss1 = models.StringField(
-        choices=[['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', '']],
-        label='Assimetria Informativa',
-        widget=widgets.RadioSelectHorizontal,
-    )
+
     q_loss2 = models.StringField(
         choices=[['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', '']],
         label='Assimetria Informativa',
@@ -90,11 +86,6 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal,
     )
     q_loss4 = models.StringField(
-        choices=[['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', '']],
-        label='Assimetria Informativa',
-        widget=widgets.RadioSelectHorizontal,
-    )
-    q_loss5 = models.StringField(
         choices=[['1', ''], ['2', ''], ['3', ''], ['4', ''], ['5', '']],
         label='Assimetria Informativa',
         widget=widgets.RadioSelectHorizontal,
