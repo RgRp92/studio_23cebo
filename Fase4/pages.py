@@ -69,7 +69,6 @@ class Page7(Page):
 
 class Results(Page):
     form_model = 'player'
-    form_fields = ['qmail']
 
 page_sequence = [
                  Page1Demographics,
