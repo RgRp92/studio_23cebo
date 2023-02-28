@@ -389,7 +389,6 @@ page_sequence = [
     #Page3Strumento,
     Page3Strumento2,
     Page4Payoff,
-    Page5Esempio1,
     Page6Esempio1,
     Page7Esempio2,
     Page7Esempio2a,
